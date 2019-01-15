@@ -29,8 +29,10 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.CheckBox;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,8 +51,9 @@ import static android.Manifest.permission.READ_CONTACTS;
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
     LoginService loginService;
+    CheckBox saveLogin;
     boolean savedLogin = false; //For now a simple method that will be added with checkbox to override login necessity should user choose to stay signed in
-
+    boolean checked = false;
     /**
      * Id to identity READ_CONTACTS permission request.
      */
@@ -82,6 +85,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             Intent i = new Intent(this, HomeScreen.class);
             startActivity(i);}
         // Set up the login form.
+        saveLogin = (CheckBox) findViewById(R.id.saveLogin);
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
 
@@ -142,6 +146,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             requestPermissions(new String[]{READ_CONTACTS}, REQUEST_READ_CONTACTS);
         }
         return false;
+    }
+    public void onCheckboxClicked(View view) {
+        // Is the view now checked?
+        boolean checked = ((CheckBox) view).isChecked();
     }
 
     /**
@@ -228,6 +236,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mAuthTask.execute((Void) null);
             if (loginService.checkRegistration(email, password)){
                 Intent i = new Intent(this, HomeScreen.class);
+                 if (checked){
+                    savedLogin = true;
+                }
                 startActivity(i);
             }
         }
