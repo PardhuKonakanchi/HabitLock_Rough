@@ -3,7 +3,10 @@ package com.example.pardhu.habitlock_rough;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.ComponentName;
+import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
+import android.os.IBinder;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -32,12 +35,20 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.os.IBinder;
+import com.example.pardhu.habitlock_rough.LoginService.MyLocalBinder;
+import android.content.ServiceConnection;
+import android.content.Intent;
+import android.content.Context;
+
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
+
+    LoginService loginService;
 
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -135,6 +146,25 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         }
     }
+
+    //Creates a Connection in which we can reference the bound login service
+    private ServiceConnection pardhusConnection = new ServiceConnection() {
+        boolean isBound;
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            MyLocalBinder binder = (MyLocalBinder) service;
+            loginService = binder.getService();
+            isBound = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            isBound = false;
+        }
+    };
+
+
+
 
 
     /**
