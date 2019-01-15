@@ -49,6 +49,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
     LoginService loginService;
+    boolean savedLogin = false; //For now a simple method that will be added with checkbox to override login necessity should user choose to stay signed in
 
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -76,6 +77,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        if (savedLogin){ //Checks if user decided to save login credentials TODO:Ennsure that if user signsout that this becomes false value. Also add access to user preferences
+            showProgress(true);
+            Intent i = new Intent(this, HomeScreen.class);
+            startActivity(i);}
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -102,6 +107,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+        Intent in = new Intent(this, LoginService.class);
+        bindService(in, pardhusConnection, Context.BIND_AUTO_CREATE);
+        //Bound service for Login Activity
+
     }
 
     private void populateAutoComplete() {
