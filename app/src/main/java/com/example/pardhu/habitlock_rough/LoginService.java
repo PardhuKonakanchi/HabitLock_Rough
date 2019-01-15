@@ -23,6 +23,11 @@ public class LoginService extends Service {
         return pardhuBinder;
     }
 
+    public boolean checkRegistration(String usernameInput, String passwordInput){
+        //TODO: First check allow this function to check with databse to return if authenticated. Then add ability to return data to find user shared preferences.
+        return true;
+    }
+
 
     public class MyLocalBinder extends Binder {
         LoginService getService(){
