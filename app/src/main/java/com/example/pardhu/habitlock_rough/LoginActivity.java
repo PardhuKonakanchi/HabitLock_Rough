@@ -147,6 +147,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
         return false;
     }
+
+
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();

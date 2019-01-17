@@ -1,5 +1,6 @@
 package com.example.pardhu.habitlock_rough;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -80,17 +81,19 @@ public class HomeScreen extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_profile) {
+            Intent i = new Intent(this, LoginActivity.class); //placeholder method until pages are constructed
+            startActivity(i);
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_history) {
+            Intent i = new Intent(this, LoginActivity.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_manage) {
+            Intent i = new Intent(this, LoginActivity.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
 
         }
 
