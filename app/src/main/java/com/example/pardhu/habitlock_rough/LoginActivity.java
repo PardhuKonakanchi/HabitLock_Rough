@@ -80,8 +80,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        if (savedLogin){ //Checks if user decided to save login credentials TODO:Ennsure that if user signsout that this becomes false value. Also add access to user preferences
-            showProgress(true);
+        if (savedLogin){ //Checks if user decided to save login credentials TODO:Ennsure that if user signs out that this becomes false value. Also add access to user preferences
+            showProgress(true); //Perhaps change this so that the login information itself is saved and that way the app automatically logs into account rather than skipping page
             Intent i = new Intent(this, HomeScreen.class);
             startActivity(i);}
         // Set up the login form.
