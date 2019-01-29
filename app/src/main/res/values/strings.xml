@@ -23,4 +23,5 @@
     <string name="title_activity_home_screen_three">HomeScreenThree</string>
     <string name="yourName">Will_Input_later</string>
     <string name="yourUserName">Will_Add_UserName</string>
+    <string name="graph_view">graph_view</string>
 </resources>
