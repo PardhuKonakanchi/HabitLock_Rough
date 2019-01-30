@@ -8,10 +8,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jjoe64.graphview.GraphView;
+
 public class CardViewListFragment extends Fragment {
+
+    GraphView HabitPlot;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.graph_listview, container, false);
+        View v = inflater.inflate(R.layout.graph_listview, container, false);
+
+        HabitPlot = (GraphView) v.findViewById(R.id.graph_picture);
+
+
+        return v;
     }
 }
