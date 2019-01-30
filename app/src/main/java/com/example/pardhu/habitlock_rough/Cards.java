@@ -1,5 +1,7 @@
 package com.example.pardhu.habitlock_rough;
 
+
+//Information for all the cards in cardview. Will be constructed during new habit and then fetch to construct graphview and be added to CardViewListFragment
 public class Cards {
     private String imgURL;
     private String habitName;

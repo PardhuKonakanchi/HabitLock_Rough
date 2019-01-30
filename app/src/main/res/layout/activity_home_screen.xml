@@ -10,7 +10,7 @@
     tools:openDrawer="start">
 
 
-    <fragment android:name="com.example.pardhu.habitlock_rough.HeadlinesFragment" <!-- Need to add custom Fragment packages -->
+    <fragment android:name="com.example.pardhu.habitlock_rough.CardViewListFragment"
         android:id="@+id/headlines_fragment"
         android:layout_weight="1"
         android:layout_width="0dp"
