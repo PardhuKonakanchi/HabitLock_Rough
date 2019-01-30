@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.jjoe64.graphview.GraphView;
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -72,10 +73,8 @@ class CustomListAdapter extends ArrayAdapter<Cards> {
             LayoutInflater inflater = LayoutInflater.from(mContext);
             convertView = inflater.inflate(mResource, parent, false);
             holder= new ViewHolder();
-            holder.name = (TextView) convertView.findViewById(R.id.textView1);
-            holder.birthday = (TextView) convertView.findViewById(R.id.textView2);
-            holder.sex = (TextView) convertView.findViewById(R.id.textView3);
-            holder.image = (ImageView) convertView.findViewById(R.id.image);
+            holder.habit = (TextView) convertView.findViewById(R.id.textView);
+            holder.image = (GraphView) convertView.findViewById(R.id.image);
 
             result = convertView;
 
@@ -92,9 +91,8 @@ class CustomListAdapter extends ArrayAdapter<Cards> {
         result.startAnimation(animation);
         lastPosition = position;
 
-        holder.name.setText(name);
-        holder.birthday.setText(birthday);
-        holder.sex.setText(sex);
+        holder.habit.setText(habit);
+
 
         //create the imageloader object
         ImageLoader imageLoader = ImageLoader.getInstance();
