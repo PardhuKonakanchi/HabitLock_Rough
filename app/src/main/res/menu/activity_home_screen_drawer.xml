@@ -8,10 +8,16 @@
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_menu_camera"
             android:title="Profile" />
+
+        <item
+            android:id="@+id/nav_calendar"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Calendar Chart (Update Image later)" />
+
         <item
             android:id="@+id/nav_history"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="History and Data" />
+            android:title="Progress (Update image later)" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"

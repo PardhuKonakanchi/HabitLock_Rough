@@ -37,7 +37,7 @@ public class CardViewListFragment extends Fragment {
         ArrayList<Cards> list = new ArrayList<>();
         list.add(new Cards("Add graph points", "Add habit name", "Add any more info needed"));
 
-        CustomListAdapter adapter = new CustomListAdapter(this,R.layout.graph_listview, list);
+        CustomListAdapter adapter = new CustomListAdapter(this.getContext(),R.layout.graph_listview, list);
         listView.setAdapter(adapter);
 
         return v;
