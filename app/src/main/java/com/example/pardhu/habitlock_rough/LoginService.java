@@ -24,7 +24,7 @@ public class LoginService extends Service {
     }
 
     public boolean checkRegistration(String usernameInput, String passwordInput){
-        //TODO: First check allow this function to check with databse to return if authenticated. Then add ability to return data to find user shared preferences.
+        //TODO: First check allow this function to check with database to return if authenticated. Then add ability to return data to find user shared preferences.
         return true;
     }
 

@@ -6,7 +6,7 @@ import android.os.Bundle;
 public class NewHabitScreen extends AppCompatActivity {
     /*
     This activity will be the process of creating a new habit
-    Users will be able to enter the habit, set up timings for notificiations,
+    Users will be able to enter the habit, set up timings for notifications,
     (perhaps connect to Google Calendar) and other features to be thought of.
 
      */
