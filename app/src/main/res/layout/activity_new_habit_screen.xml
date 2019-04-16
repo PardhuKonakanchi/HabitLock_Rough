@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,35 +10,33 @@
         android:id="@+id/HabitName"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_above="@+id/timeInput"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="82dp">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/habitName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Habit Name" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/timeInput"
         android:layout_width="395dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="8dp"
+        android:layout_height="58dp"
+        android:layout_above="@+id/habitDays"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="6dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.287">
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="37dp">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/habitTime"
@@ -48,24 +46,22 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
+        android:id="@id/habitDays"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:hint="Days(Update to Calendar addition)"
-        app:layout_constraintBottom_toTopOf="@+id/switch1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:layout_constraintVertical_bias="0.334">
+        android:layout_above="@+id/notifications"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="56dp"
+        android:hint="Days(Update to Calendar addition)">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/habitDays"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/habitDays"
             android:hint="hint" />
     </android.support.design.widget.TextInputLayout>
 
@@ -73,29 +69,39 @@
         android:id="@+id/addHabitBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="140dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Add Habit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+        android:layout_marginEnd="175dp"
+        android:layout_marginBottom="97dp"
+        android:text="Add Habit" />
 
     <Switch
-        android:id="@+id/switch1"
-        android:layout_width="247dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="8dp"
+        android:id="@+id/notifications"
+        android:layout_width="201dp"
+        android:layout_height="61dp"
+        android:layout_above="@+id/appLock"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="188dp"
-        android:text="Notifications"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.795" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_marginEnd="193dp"
+        android:layout_marginBottom="1dp"
+        android:text="Notifications" />
+
+    <Switch
+        android:id="@+id/appLock"
+        android:layout_width="203dp"
+        android:layout_height="59dp"
+        android:layout_above="@+id/addHabitBtn"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginBottom="54dp"
+        android:text="AppLock" />
+
+</RelativeLayout>

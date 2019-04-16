@@ -48,6 +48,10 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
+
+/*
+This is the in-built login activity. I might change this to my own set up but we will see if we can figure this out
+ */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
     LoginService loginService;
