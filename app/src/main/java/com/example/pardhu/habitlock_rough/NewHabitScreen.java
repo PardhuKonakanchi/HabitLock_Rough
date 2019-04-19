@@ -45,6 +45,9 @@ public class NewHabitScreen extends AppCompatActivity {
                 String daysOfNewHabit = habitDays.getText().toString();
 
                 //Intent i = new Intent(this, HabitPreferences.class);
+                //i.putExtra("HABIT_NAME", habitName)
+                //i.putExtra("HABIT_DAYS", habitDays)
+                //i.putExtra("HABIT_TIME", habitTime)
                 //startActivity(i);
             }
         });
